@@ -25,7 +25,7 @@ module Main where
 
     -- Create an instance of Board
     instance Board MsBoard where
-        initialize seed (x,y) (cw,ch) = MsBoard [MMine,MCell,MMine,MCell] 2 2 --TODO
+        initialize seed (x,y) (cw,ch) = MsBoard [MMine,MCell,MCell,MCell] 2 2 --TODO
 
         click (x,y) b = click' $ getClickedVal (x, y) b
                         where click' (Just MMine) = updateCellValue (x,y) UMine b
